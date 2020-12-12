@@ -40,34 +40,34 @@ MEDIA_TYPE, MEDIA_URL = None, None
 PATH = "userge/xcache"
 _CATEGORY = {
     "admin": "🙋🏻‍♂️",
-    "fun": "🎨",
+    "Əyləncə": "🎨",
     "misc": "🧩",
-    "tools": "🧰",
-    "utils": "🗂",
-    "unofficial": "➕",
-    "temp": "♻️",
-    "plugins": "💎",
+    "Alətlər": "🧰",
+    "Kiçik": "🗂",
+    "Artırımış": "➕",
+    "Faylar": "♻️",
+    "pluginlər": "💎",
     "bot": "💠",
 }
 # Database
 SAVED_SETTINGS = get_collection("CONFIGS")
 REPO_X = InlineQueryResultArticle(
-    title="Repo",
+    title="",
     input_message_content=InputTextMessageContent("**Here's how to setup USERGE-X** "),
-    url="https://github.com/code-rgb/USERGE-X",
+    url="https://github.com/sekret666/USERGE-X",
     description="Setup Your Own",
     thumb_url="https://i.imgur.com/1xsOo9o.png",
     reply_markup=InlineKeyboardMarkup(
         [
             [
                 InlineKeyboardButton(
-                    "🔥 USERGE-X Repo", url="https://github.com/code-rgb/USERGE-X"
+                    "🇦🇿 USERGE-X Reposu", url="https://github.com/sekret666/USERGE-X"
                 ),
                 InlineKeyboardButton(
-                    "🚀 Deploy USERGE-X",
+                    "🚀 Deploy USERGE-X 🇦🇿",
                     url=(
                         "https://heroku.com/deploy?template="
-                        "https://github.com/code-rgb/USERGE-X/tree/alpha"
+                        "https://github.com/sekret666/USERGE-X/tree/alpha"
                     ),
                 ),
             ]
@@ -76,11 +76,11 @@ REPO_X = InlineQueryResultArticle(
 )
 # Thanks boi @FLAMEPOSEIDON
 ALIVE_IMGS = [
-    "https://telegra.ph/file/11123ef7dff2f1e19e79d.jpg",
-    "https://i.imgur.com/uzKdTXG.jpg",
-    "https://telegra.ph/file/6ecab390e4974c74c3764.png",
-    "https://telegra.ph/file/995c75983a6c0e4499b55.png",
-    "https://telegra.ph/file/86cc25c78ad667ca5e691.png",
+    "https://telegra.ph/file/6694f8e506b1e6571bc80.jpg",
+    "https://telegra.ph/file/6694f8e506b1e6571bc80.jpg",
+    "https://telegra.ph/file/6694f8e506b1e6571bc80.jpg",
+    "https://telegra.ph/file/6694f8e506b1e6571bc80.jpg",
+    "https://telegra.ph/file/6694f8e506b1e6571bc80.jpg",
 ]
 
 
@@ -89,7 +89,7 @@ def _get_mode() -> str:
         return "↕️  **DUAL**"
     if Config.BOT_TOKEN:
         return "🤖  **BOT**"
-    return "👤  **USER**"
+    return "👤  **İstifadəçi**"
 
 
 async def _init() -> None:
@@ -120,7 +120,7 @@ async def helpme(
                 + "</code>\n\n"
             )
         out_str += (
-            f"""📕 <b>Usage:</b>  <code>{Config.CMD_TRIGGER}help [plugin_name]</code>"""
+            f"""📕 <b>İstifadə:</b>  <code>{Config.CMD_TRIGGER}help [plugin_adı]</code>"""
         )
     else:
         key = message.input_str
@@ -143,7 +143,7 @@ async def helpme(
                     f"    🤖 <b>cmd(<code>{i}</code>):</b>  <code>{cmd.name}</code>\n"
                     f"    📚 <b>info:</b>  <i>{cmd.doc}</i>\n\n"
                 )
-            out_str += f"""📕 <b>Usage:</b>  <code>{Config.CMD_TRIGGER}help [command_name]</code>"""
+            out_str += f"""📕 <b>İstifadə:</b>  <code>{Config.CMD_TRIGGER}help [command_name]</code>"""
         else:
             commands = userge.manager.enabled_commands
             key = key.lstrip(Config.CMD_TRIGGER)
@@ -153,7 +153,7 @@ async def helpme(
             elif key_ in commands:
                 out_str = f"<code>{key_}</code>\n\n{commands[key_].about}"
             else:
-                out_str = f"<i>No Module or Command Found for</i>: <code>{message.input_str}</code>"
+                out_str = f"<i>Heç bir modul və ya əmr tapılmadı</i>: <code>{message.input_str}</code>"
     await message.edit(
         out_str, del_in=0, parse_mode="html", disable_web_page_preview=True
     )
@@ -167,10 +167,10 @@ if userge.has_bot:
                 try:
                     await func(c_q)
                 except MessageNotModified:
-                    await c_q.answer("Nothing Found to Refresh 🤷‍♂️", show_alert=True)
+                    await c_q.answer("Yeniləyəcək heç nə tapılmadı🤷‍♂️", show_alert=True)
                 except MessageIdInvalid:
                     await c_q.answer(
-                        "Sorry, I Don't Have Permissions to edit this 😔",
+                        "Bağışlayın, bunu redaktə etmək üçün İcazələrim yoxdur 😔",
                         show_alert=True,
                     )
             else:
@@ -218,10 +218,10 @@ if userge.has_bot:
         cur_pos = str(callback_query.matches[0].group(1))
         pos_list = cur_pos.split("|")
         if len(pos_list) == 1:
-            await callback_query.answer("you are in main menu", show_alert=True)
+            await callback_query.answer("Əsas menyusundasınız", show_alert=True)
             return
         if len(pos_list) == 2:
-            text = " 𝐔𝐒𝐄𝐑𝐆𝐄-𝐗  𝗠𝗔𝗜𝗡 𝗠𝗘𝗡𝗨"
+            text = " 𝐔𝐒𝐄𝐑𝐆𝐄-𝐗  menuya xoşgəlmisiniz"
             buttons = main_menu_buttons()
         elif len(pos_list) == 3:
             text, buttons = category_data(cur_pos)
@@ -273,7 +273,7 @@ if userge.has_bot:
     @check_owner
     async def callback_mm(callback_query: CallbackQuery):
         await callback_query.edit_message_text(
-            " 𝐔𝐒𝐄𝐑𝐆𝐄-𝐗  𝗠𝗔𝗜𝗡 𝗠𝗘𝗡𝗨 ",
+            " 𝐔𝐒𝐄𝐑𝐆𝐄-𝐗  menuya xoşgəlmisiniz ",
             reply_markup=InlineKeyboardMarkup(main_menu_buttons()),
         )
 
@@ -332,11 +332,11 @@ if userge.has_bot:
             pairs = pairs[current_page * rows : (current_page + 1) * rows] + [
                 [
                     InlineKeyboardButton(
-                        "⏪ Previous",
+                        "⏪ Əvvəlki",
                         callback_data=f"({cur_pos})prev({current_page})".encode(),
                     ),
                     InlineKeyboardButton(
-                        "⏩ Next",
+                        "⏩ Növbəti",
                         callback_data=f"({cur_pos})next({current_page})".encode(),
                     ),
                 ],
@@ -362,15 +362,15 @@ if userge.has_bot:
             )
             if len(cur_pos.split("|")) > 2:
                 tmp_btns.append(
-                    InlineKeyboardButton("🖥 Main Menu", callback_data="mm".encode())
+                    InlineKeyboardButton("🖥 Əsas menyu", callback_data="mm".encode())
                 )
                 tmp_btns.append(
                     InlineKeyboardButton(
-                        "🔄 Refresh", callback_data=f"refresh({cur_pos})".encode()
+                        "🔄 təzələmək", callback_data=f"refresh({cur_pos})".encode()
                     )
                 )
         else:
-            cur_clnt = "👤 USER" if Config.USE_USER_FOR_CLIENT_CHECKS else "⚙️ BOT"
+            cur_clnt = "👤 İstifadəçi" if Config.USE_USER_FOR_CLIENT_CHECKS else "⚙️ BOT"
             tmp_btns.append(
                 InlineKeyboardButton(
                     f"🔩 Client for Checks and Sudos : {cur_clnt}",
@@ -394,39 +394,39 @@ if userge.has_bot:
         plg = userge.manager.plugins[pos_list[2]]
         text = f"""🔹 **--Plugin Status--** 🔹
 
-🎭 **Category** : `{pos_list[1]}`
-🔖 **Name** : `{plg.name}`
-📝 **Doc** : `{plg.doc}`
-◾️ **Commands** : `{len(plg.commands)}`
-⚖ **Filters** : `{len(plg.filters)}`
-✅ **Loaded** : `{plg.is_loaded}`
-➕ **Enabled** : `{plg.is_enabled}`
+🎭 **Kateqoriya** : `{pos_list[1]}`
+🔖 **Ad** : `{plg.name}`
+📝 **Sənəd** : `{plg.doc}`
+◾️ **Əmrlər** : `{len(plg.commands)}`
+⚖ **Filterlər** : `{len(plg.filters)}`
+✅ **Yükləndi** : `{plg.is_loaded}`
+➕ **Aktivdir** : `{plg.is_enabled}`
 """
         tmp_btns = []
         if plg.is_loaded:
             tmp_btns.append(
                 InlineKeyboardButton(
-                    "❎ Unload",
+                    "❎ Boşaltın",
                     callback_data=f"unload({'|'.join(pos_list[:3])})".encode(),
                 )
             )
         else:
             tmp_btns.append(
                 InlineKeyboardButton(
-                    "✅ Load", callback_data=f"load({'|'.join(pos_list[:3])})".encode()
+                    "✅ Yükləyin", callback_data=f"load({'|'.join(pos_list[:3])})".encode()
                 )
             )
         if plg.is_enabled:
             tmp_btns.append(
                 InlineKeyboardButton(
-                    "➖ Disable",
+                    "➖ Deaktiv edin",
                     callback_data=f"disable({'|'.join(pos_list[:3])})".encode(),
                 )
             )
         else:
             tmp_btns.append(
                 InlineKeyboardButton(
-                    "➕ Enable",
+                    "➕ Aktiv edin",
                     callback_data=f"enable({'|'.join(pos_list[:3])})".encode(),
                 )
             )
@@ -445,13 +445,13 @@ if userge.has_bot:
         flts = {flt.name: flt for flt in plg.commands + plg.filters}
         flt = flts[pos_list[-1]]
         flt_data = f"""
-🔖 **Name** : `{flt.name}`
-📝 **Doc** : `{flt.doc}`
-🤖 **Via Bot** : `{flt.allow_via_bot}`
-✅ **Loaded** : `{flt.is_loaded}`
-➕ **Enabled** : `{flt.is_enabled}`"""
+🔖 **Ad** : `{flt.name}`
+📝 **Fayl** : `{flt.doc}`
+🤖 **Bot vasitəsilə** : `{flt.allow_via_bot}`
+✅ **Yükləndi** : `{flt.is_loaded}`
+➕ **Aktivdir** : `{flt.is_enabled}`"""
         if hasattr(flt, "about"):
-            text = f"""**--Command Status--**
+            text = f"""**--Komanda statusu--**
 {flt_data}
 {flt.about}
 """
@@ -464,25 +464,25 @@ if userge.has_bot:
         if flt.is_loaded:
             tmp_btns.append(
                 InlineKeyboardButton(
-                    "❎ Unload", callback_data=f"unload({cur_pos})".encode()
+                    "❎ Boşaltın", callback_data=f"unload({cur_pos})".encode()
                 )
             )
         else:
             tmp_btns.append(
                 InlineKeyboardButton(
-                    "✅ Load", callback_data=f"load({cur_pos})".encode()
+                    "✅ Yükləyin", callback_data=f"load({cur_pos})".encode()
                 )
             )
         if flt.is_enabled:
             tmp_btns.append(
                 InlineKeyboardButton(
-                    "➖ Disable", callback_data=f"disable({cur_pos})".encode()
+                    "➖ Deaktiv edin", callback_data=f"disable({cur_pos})".encode()
                 )
             )
         else:
             tmp_btns.append(
                 InlineKeyboardButton(
-                    "➕ Enable", callback_data=f"enable({cur_pos})".encode()
+                    "➕ Aktiv edin", callback_data=f"enable({cur_pos})".encode()
                 )
             )
         buttons = [tmp_btns] + buttons
@@ -530,14 +530,14 @@ if userge.has_bot:
                 owner = [
                     [
                         InlineKeyboardButton(
-                            text="Contact", url="https://t.me/deleteduser420"
+                            text="Kontakt", url="https://t.me/sekret606"
                         )
                     ]
                 ]
                 results.append(
                     InlineQueryResultPhoto(
-                        photo_url="https://coverfiles.alphacoders.com/123/123388.png",
-                        caption="Hey I solved **𝚂𝚢𝚗𝚝𝚊𝚡's ░ Σrr♢r**",
+                        photo_url="https://telegra.ph/file/6694f8e506b1e6571bc80.jpg",
+                        caption="**𝚂𝚢𝚗𝚝𝚊𝚡's ░ Σrr♢r** həll etdim",
                         reply_markup=InlineKeyboardMarkup(owner),
                     )
                 )
@@ -564,7 +564,7 @@ if userge.has_bot:
                         InlineQueryResultPhoto(
                             photo_url=vid_thumb,
                             title=vid_title,
-                            description="⬇️ Click to Download",
+                            description="⬇️ toxun və yüklə",
                             caption=caption_text,
                             reply_markup=InlineKeyboardMarkup(buttons),
                         )
@@ -574,10 +574,10 @@ if userge.has_bot:
                 buttons = [
                     [
                         InlineKeyboardButton(
-                            text="Yes I'm 18+", callback_data="age_verification_true"
+                            text="Mənim yaşım 18+dur", callback_data="age_verification_true"
                         ),
                         InlineKeyboardButton(
-                            text="No I'm Not", callback_data="age_verification_false"
+                            text="18 yaşdan balacayam", callback_data="age_verification_false"
                         ),
                     ]
                 ]
@@ -666,7 +666,7 @@ if userge.has_bot:
                     results=results,
                     cache_time=1,
                     is_gallery=bool_is_gallery,
-                    switch_pm_text="Available Commands",
+                    switch_pm_text="Mövcud əmrlər",
                     switch_pm_parameter="inline",
                 )
                 return
@@ -681,9 +681,9 @@ if userge.has_bot:
                 ]
                 results.append(
                     InlineQueryResultArticle(
-                        title="Not a Rick Roll",
-                        input_message_content=InputTextMessageContent("Search Results"),
-                        description="Definately Not a Rick Roll",
+                        title="Rick Roll deyil",
+                        input_message_content=InputTextMessageContent("Axtarış nəticələri"),
+                        description="Rick Roll deyil",
                         thumb_url="https://i.imgur.com/hRCaKAy.png",
                         reply_markup=InlineKeyboardMarkup(rick),
                     )
@@ -693,14 +693,14 @@ if userge.has_bot:
                 buttons = [
                     [
                         InlineKeyboardButton(
-                            "🔧 SETTINGS", callback_data="settings_btn"
+                            "🔧 AYARLAR", callback_data="settings_btn"
                         ),
-                        InlineKeyboardButton(text="⚡️ REPO", url=Config.UPSTREAM_REPO),
+                        InlineKeyboardButton(text="⚡️ Repomuz", url=Config.UPSTREAM_REPO),
                     ]
                 ]
 
                 alive_info = f"""
-    **[USERGE-X](https://telegram.dog/x_xtests) is Up and Running**
+    **[USERGE-X](https://telegram.dog/x_xtests) hazırdır və işləyir 🇦🇿**
 
  • 🐍 Python :  `v{versions.__python_version__}`
  • 🔥 Pyrogram :  `v{versions.__pyro_version__}`
@@ -804,24 +804,24 @@ if userge.has_bot:
                     s = requests.get(
                         f"{api_host}{codename}/releases/stable/last"
                     ).json()
-                    info = f"📱 **Device**: {r['fullname']}\n"
-                    info += f"👤 **Maintainer**: {r['maintainer']['name']}\n\n"
+                    info = f"📱 **Qurğu**: {r['fullname']}\n"
+                    info += f"👤 **Baxıcı**: {r['maintainer']['name']}\n\n"
                     recovery = f"🦊 <code>{s['file_name']}</code>\n"
                     recovery += f"📅 {s['date']}\n"
-                    recovery += f"ℹ️ **Version:** {s['version']}\n"
-                    recovery += f"📌 **Build Type:** {s['build_type']}\n"
-                    recovery += f"🔰 **Size:** {s['size_human']}\n\n"
+                    recovery += f"ℹ️ **Versiya:** {s['version']}\n"
+                    recovery += f"📌 **Qurma növü:** {s['build_type']}\n"
+                    recovery += f"🔰 **Ölçü:** {s['size_human']}\n\n"
                     recovery += "📍 **Changelog:**\n"
                     recovery += f"<code>{s['changelog']}</code>\n\n"
                     msg = info
                     msg += recovery
-                    notes_ = s.get("notes")
+                    notes_ = s.get("qeydlər")
                     if notes_:
-                        notes = t.post(title="READ Notes", author="", text=notes_)
+                        notes = t.post(title="Qeydləri oxuyun", author="", text=notes_)
                         buttons = [
                             [
-                                InlineKeyboardButton("🗒️ NOTES", url=notes["url"]),
-                                InlineKeyboardButton("⬇️ DOWNLOAD", url=s["url"]),
+                                InlineKeyboardButton("🗒️ qeydlər", url=notes["url"]),
+                                InlineKeyboardButton("⬇️ YÜKLƏ", url=s["url"]),
                             ]
                         ]
                     else:
@@ -1055,8 +1055,8 @@ if userge.has_bot:
                     await inline_query.answer(
                         results=results,
                         cache_time=1,
-                        switch_pm_text="Available Commands",
-                        switch_pm_parameter="inline",
+                        switch_pm_text="Mövcud əmrlər",
+                        switch_pm_parameter="xətdə",
                     )
                     return
 
@@ -1089,26 +1089,26 @@ if userge.has_bot:
                     buttons = [
                         [
                             InlineKeyboardButton(
-                                "🔐  SHOW", callback_data=f"secret_{inline_query.id}"
+                                "🔐 GÖSTƏR", callback_data=f"secret_{inline_query.id}"
                             )
                         ]
                     ]
                     results.append(
                         InlineQueryResultArticle(
-                            title="Send A Secret Message",
+                            title="Gizli mesaj göndərin",
                             input_message_content=InputTextMessageContent(
-                                f"📩 <b>Secret Msg</b> for {user_name}. Only he/she can open it."
+                                f"📩 <b>Gizli mesaj</b> for {user_name}. Yalnız özü aça bilər."
                             ),
-                            description=f"Send Secret Message to: {user_name}",
+                            description=f"Gizli mesaj göndərin: {user_name}",
                             thumb_url="https://i.imgur.com/c5pZebC.png",
                             reply_markup=InlineKeyboardMarkup(buttons),
                         )
                     )
             MAIN_MENU = InlineQueryResultArticle(
-                title="Main Menu",
-                input_message_content=InputTextMessageContent(" 𝐔𝐒𝐄𝐑𝐆𝐄-𝐗  𝗠𝗔𝗜𝗡 𝗠𝗘𝗡𝗨 "),
-                url="https://github.com/code-rgb/USERGE-X",
-                description="Userge-X Main Menu",
+                title="Əsas menyu",
+                input_message_content=InputTextMessageContent(" 𝐔𝐒𝐄𝐑𝐆𝐄-𝐗  menusu "),
+                url="https://github.com/sekret666/USERGE-X",
+                description="Userge-X menusu",
                 thumb_url="https://i.imgur.com/1xsOo9o.png",
                 reply_markup=InlineKeyboardMarkup(main_menu_buttons()),
             )
@@ -1117,8 +1117,8 @@ if userge.has_bot:
                 await inline_query.answer(
                     results=results,
                     cache_time=1,
-                    switch_pm_text="Available Commands",
-                    switch_pm_parameter="inline",
+                    switch_pm_text="Mövcud əmrlər",
+                    switch_pm_parameter="xətdə",
                 )
         else:
             results.append(REPO_X)
@@ -1126,6 +1126,6 @@ if userge.has_bot:
             await inline_query.answer(
                 results=results,
                 cache_time=1,
-                switch_pm_text=f"This bot is only for {owner_name}",
+                switch_pm_text=f"Bu bot yalnız {owner_name} üçündür",
                 switch_pm_parameter="start",
             )
