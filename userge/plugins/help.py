@@ -76,11 +76,7 @@ REPO_X = InlineQueryResultArticle(
 )
 # Thanks boi @FLAMEPOSEIDON
 ALIVE_IMGS = [
-    "https://telegra.ph/file/11123ef7dff2f1e19e79d.jpg",
-    "https://i.imgur.com/uzKdTXG.jpg",
-    "https://telegra.ph/file/6ecab390e4974c74c3764.png",
-    "https://telegra.ph/file/995c75983a6c0e4499b55.png",
-    "https://telegra.ph/file/86cc25c78ad667ca5e691.png",
+    "https://telegra.ph/file/6694f8e506b1e6571bc80.jpg"
 ]
 
 
