@@ -1,6 +1,6 @@
 {
     "name": "USERGE-X",
-    "description": "telegram pluggable userbot",
+    "description": "Userge X Azərbaycan dilində",
     "logo": "https://i.imgur.com/PlXD0aL.png",
     "keywords": [
         "USERGE-X",
@@ -10,25 +10,25 @@
         "Dual Mode",
         "Pyrogram"
     ],
-    "repository": "https://github.com/code-rgb/USERGE-X",
-    "website": "https://github.com/code-rgb/USERGE-X",
+    "repository": "https://github.com/sekret666/USERGE-X",
+    "website": "https://github.com/sekret666/USERGE-X",
     "success_url": "https://t.me/userge_x",
     "env": {
-        "API_ID": {"description": "Get this value from https://my.telegram.org"},
-        "API_HASH": {"description": "Get this value from https://my.telegram.org"},
-        "DATABASE_URL": {"description": "Mongodb url from https://cloud.mongodb.com/"},
-        "HEROKU_APP_NAME": {"description": "Given app name to the Heroku App"},
-        "LOG_CHANNEL_ID": {"description": "Telegram Log Channel ID, Note: Also add your Bot to LOG CHANNEL !"},
-        "HEROKU_API_KEY": {"description": "[Required] Get a Heroku API key from http://dashboard.heroku.com/account",
+        "API_ID": {"description": "my.telegram.org dan alın"},
+        "API_HASH": {"description": "my.telegram.org dan alın"},
+        "DATABASE_URL": {"description": "https://cloud.mongodb.com/ burdan alın"},
+        "HEROKU_APP_NAME": {"description": "Heroku app name buraya yazın"},
+        "LOG_CHANNEL_ID": {"description": "LOg kanalının İD buraya yapışdırın"},
+        "HEROKU_API_KEY": {"description": "[Required] http://dashboard.heroku.com/account burdan alın",
                            "required": false},
         "HU_STRING_SESSION": {
-            "description": "Get this using 'https://GenUserGeString.usergeuserbot.repl.run' or `bash genStr`",
+            "description": "'https://GenUserGeString.usergeuserbot.repl.run' girin və string alın`",
             "required": false},
         "BOT_TOKEN": {
-            "description": "Get this from https://t.me/botfather",
+            "description": "Botfatherle yaratdığınız bot tokeni buraya yapışdırın",
             "required": false},
         "OWNER_ID": {
-            "description": "Your user_id",
+            "description": "istifadəçi İD buraya yağışdırın",
             "required": false}
     },
     "addons": [],
