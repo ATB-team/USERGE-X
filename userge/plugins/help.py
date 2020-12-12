@@ -689,14 +689,14 @@ if userge.has_bot:
                 buttons = [
                     [
                         InlineKeyboardButton(
-                            "🔧 SETTINGS", callback_data="settings_btn"
+                            "🔧 Ayarlar", callback_data="settings_btn"
                         ),
-                        InlineKeyboardButton(text="⚡️ REPO", url=Config.UPSTREAM_REPO),
+                        InlineKeyboardButton(text="⚡️ Repomuz", url=Config.UPSTREAM_REPO),
                     ]
                 ]
 
                 alive_info = f"""
-    **[USERGE-X](https://telegram.dog/x_xtests) is Up and Running**
+    **[USERGE-X](https://telegram.dog/x_xtests) aktivdir və tam işləkdir 🇦🇿**
 
  • 🐍 Python :  `v{versions.__python_version__}`
  • 🔥 Pyrogram :  `v{versions.__pyro_version__}`
@@ -1085,17 +1085,17 @@ if userge.has_bot:
                     buttons = [
                         [
                             InlineKeyboardButton(
-                                "🔐  SHOW", callback_data=f"secret_{inline_query.id}"
+                                "🔐  göstər", callback_data=f"secret_{inline_query.id}"
                             )
                         ]
                     ]
                     results.append(
                         InlineQueryResultArticle(
-                            title="Send A Secret Message",
+                            title="Gizli mesaj göstər",
                             input_message_content=InputTextMessageContent(
                                 f"📩 <b>Secret Msg</b> for {user_name}. Only he/she can open it."
                             ),
-                            description=f"Send Secret Message to: {user_name}",
+                            description=f"gizli mesaj göndərilmişdir: {user_name}",
                             thumb_url="https://i.imgur.com/c5pZebC.png",
                             reply_markup=InlineKeyboardMarkup(buttons),
                         )
